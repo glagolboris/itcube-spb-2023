@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-Window.size = (366, 600)
+Window.size = (395, 600)
 KV = '''
 MDScreen:
     MDBottomNavigation:
@@ -56,59 +56,83 @@ MDScreen:
                 text: "Профиль"
                 halign: "justify"
                 pos_hint: {"center_x": .5, "center_y": .9}
-                font_size: 24
+                font_size: 40
+                font_name: "Roboto-Black"
+                color: 1,1,1,1
                 
             MDLabel:
                 text: "Здравствуйте, name"
+                font_name: "Roboto-Black"            
                 halign: "justify"
-                pos_hint: {"center_x": .5, "center_y": .75}
+                pos_hint: {"center_x": .5, "center_y": .8}
                 font_size: 20
+                color: 1,1,1,1 
             
             MDLabel:
-                text: "Здесь Ваш номер телефона"
+                text: "      +7 (***) ***-**-**"
+                font_name: "Roboto-Black"                
                 halign: "justify"
                 pos_hint: {"center_x": .5, "center_y": .7}
                 font_size: 18
+                color: 1,1,1,1
+                            
+            MDRaisedButton:
+                text: "Ваша скидка discount%"
+                font_name: "Roboto-Black"                
+                md_bg_color: .868, .868, .868, .8
+                size_hint_x: .25
+                size_hint_y: .1
+                pos_hint: {"center_x": .28, "center_y": .6}                    
+                    
+            MDRaisedButton:
+                text: "История заказов"
+                font_name: "Roboto-Black"                                  
+                md_bg_color: .868, .868, .868, .8
+                size_hint_x: .38
+                size_hint_y: .1
+                pos_hint: {"center_x": .76, "center_y": .6}        
             
-            MDGridLayout:
-                rows: 3
-                cols: 2
-                id: box
-                adaptive_height: True
-                spacing: 10
-                padding: 10
-                pos_hint: {"center_x": .5, "center_y": .7}
-                MDRaisedButton:
-                    text: "Ваша скидка discount%"
-                    md_bg_color: "grey"
-                    width: 100
-                    height: 60
-                    
-                    
-                MDRaisedButton:
-                    text: "Ваша скидка discount%"
-                    md_bg_color: "grey"
-                    width: 100
-                    height: 60            
+            MDRaisedButton:
+                text: "Банковские карты"
+                font_name: "Roboto-Black"                
+                md_bg_color: .868, .868, .868, .8
+                pos_hint: {"center_x": .5, "center_y": .45}  
+                size_hint_x: 0.9
+                size_hint_y: 0.1
                 
-                MDRaisedButton:
-                    text: "Ваша скидка discount%"
-                    md_bg_color: "grey"
-                    width: 100
-                    height: 60
-                    
-                MDRaisedButton:
-                    text: "Ваша скидка discount%"
-                    md_bg_color: "grey"
-                    width: 100
-                    height: 60        
-            
+            MDRaisedButton:
+                text: "Настройки"
+                font_name: "Roboto-Black"                
+                md_bg_color: 217, 217, 217, .6
+                size_hint_x: 0.9    
+                size_hint_y: 0.1
+                pos_hint: {"center_x": .5, "center_y": .3}
+
+            MDRaisedButton:
+                text: "Выйти"
+                font_name: "Roboto-Black"                
+                md_bg_color: 1, 0, 0, 1
+                size_hint_y: 0.1
+                size_hint_x: 0.4
+                pos_hint: {"center_x": .25, "center_y": .1}                   
 '''
 
+KV1 = """
+MDScreen:
+    MDLabel:
+        text: "smf_name"
+        halighn: "center"
+        text_color: .016, .424, .224
+        
+"""
 
 class DemoApp(MDApp):
     def build(self):
         return Builder.load_string(KV)
+
+
+    # def build_1(self):
+    #     return Builder.load_string(KV1)
 
 
 if __name__ == '__main__':
